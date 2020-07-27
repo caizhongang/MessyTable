@@ -1,0 +1,25 @@
+data_dir: /mnt/lustre/share/DSK/datasets/MessyTable # TODO please define your data_dir
+train_json: train.json
+img_height: 1080
+img_width: 1920
+cropped_height: 224
+cropped_width: 224
+learning_rate: 1e-4
+num_epoch: 10
+num_workers: 16 
+milestones: [6, 8]
+gamma: 0.1
+split_samples_func: prepare_training_samples
+batch_size: 1
+cam_selected_num: 8
+image_pairs_per_batch: 24
+data_augmentation: False
+triplet_batch_size: 512
+triplet_sampling_ratio: [0.5,0.3,0.2] 
+zoomout_ratio: [2.0] 
+features_net: FeaturesRes18
+model_class: ASNet 
+loss_func: CooperativeTripletLoss
+triplet_margin: 3.0 
+mode: Triplet 
+scene_ratio: 1
