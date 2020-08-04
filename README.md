@@ -1,58 +1,60 @@
-# **messytable**
-> This repository is for **MessyTable: Instance Association in Multiple Camera Views** accepted on ECCV 2020.
+# **MessyTable: Instance Association in Multiple Camera Views**
 
-## Paper
+Useful Links:
+* Visit our [[Project Homepage]](https://caizhongang.github.io/projects/MessyTable/) for an overview of MessyTable dataset
+* Consult our Paper (Accepted in ECCV 2020) [[Preprint]](https://arxiv.org/pdf/2007.14878.pdf) for complete technical details
 
-
-## Dataset Page
-[MessyTable dataset](https://caizhongang.github.io/projects/MessyTable/)
-
-
-## Environment
+## Setup
+### Environment
 ```
-(ananconda3, python 3.7.3)
-conda create -n mt
+(ananconda3)
+conda create -n mt python=3.7
 conda activate mt
 pip install torch==1.1.0 torchvision==0.3.0
 pip install opencv-python==3.4.2.17
 pip install scipy==1.2.0
 ```
-## Get started
-### Pretrained Model
-* Pretrained ASNet: `pretrained_models/ASNet.pth` (Place at `models/asnet/` or `models/asnet_1gpu` for evaluation)
+
 ### Dataset Preparation
-* Download the dataset
-* Place the dataset under folder `data/`, alternatively, indicate 'data_dir' in the config file `models/<config_dir>/train.yaml`.
-* Make sure that all the images are in `images/` and all the json files are in `labels/`.
-### Training
-* Please take note that our results are obtained on 8 GPU, with batch_size = 512. 
+* Download MessyTable.zip (~22 GB) from [[Aliyun]]() (coming soon) or [[Google Drive]](https://drive.google.com/file/d/1i4mJz9xsDwhzWes7sVLXuhLKP9eNtbBG/view?usp=sharing)
+* Unzip MessyTable.zip, place `images/` and `labels/` in `data/` as follows:
 ```
-python train.py --config_dir asnet
+MessyTable
+├── models
+├── src
+├── data
+    ├── images
+    ├── labels
 ```
-* On a single GPU, you can try the following with batch_size = 64.
-```
-python train.py --config_dir asnet_1gpu
-```
-### Evaluating Appearance Feature Model
-* Here, the appearance model refers to any neural networks trained, such as ASNet and TripletNet. You can change the json file to evaluate different data splits.
+
+### Pretrained Model
+* Download pretrained ASNet (ASNet.pth) from [[Google Drive]](https://drive.google.com/file/d/1VMKYeUSlUpnwLRdtDtygpkYpVWgGAm46/view?usp=sharing)
+* Place model in `models/asnet/` for evaluation
+
+## Get started
+### Evaluation
+This example evaluates pretrained ASNet: 
 ```
 python test.py --config_dir asnet \
 --eval_json test.json \
 --save_features \
 --eval_model
 ```
+Arguments:
+* --config_dir: the directory that contains the specific config file `train.yaml` (checkpoints are automatically saved in the same dir)
+* --eval_json: data split name in `data/labels/` to evaluate (test.json, val.json and by difficulty levels, see Paper Sec 5.3)
+* --save_features: (optional) save extrated features in `models/<config_dir>` for faster evaluation in the future
+* --load_features: (optional) load saved features from `models/<config_dir>`, if the features have been saved in the past
+* --eval_model: evaluate using the appearance features only
+* --eval_model_esc: evaluate using the appearance features with epipolar soft constraint (See Paper Sec 5.2)
+* --eval_by_angle: (optional) evaluate by angle differences (See Paper Sec 5.3)
 
-### Evaluating Appearance Feature Model with Epipolar Soft Constraint
+### Training
+* Training on 8 GPUs with batch size 512 (we use this setting in our paper)
 ```
-python test.py --config_dir asnet \
---eval_json test.json \
---load_features \
---eval_model_esc 
+python train.py --config_dir asnet
 ```
-### Evaluating by Angle Differences
+* Training on a single GPU with batch size 64
 ```
-python test.py --config_dir asnet \
---eval_json test.json \
---load_features \
---eval_by_angle 
+python train.py --config_dir asnet_1gpu
 ```
