@@ -2,7 +2,7 @@
 
 Useful Links:
 * Visit our [[Project Homepage]](https://caizhongang.github.io/projects/MessyTable/) for an overview of MessyTable dataset
-* Consult our Paper (Accepted in ECCV 2020) [[Preprint]](https://arxiv.org/pdf/2007.14878.pdf) for complete technical details
+* Read our Paper (Accepted in ECCV 2020) [[Preprint]](https://arxiv.org/pdf/2007.14878.pdf) for complete technical details
 
 ## Setup
 ### Environment
@@ -17,7 +17,9 @@ pip install scipy==1.2.0
 
 ### Dataset Preparation
 * Download MessyTable.zip (~22 GB) from [[Aliyun]]() (coming soon) or [[Google Drive]](https://drive.google.com/file/d/1i4mJz9xsDwhzWes7sVLXuhLKP9eNtbBG/view?usp=sharing)
-* Unzip MessyTable.zip, place `images/` and `labels/` in `data/` as follows:
+* Unzip MessyTable.zip, the unzipped folder includes `images/` and `labels/`
+* In the repository, make directory `data/`
+* Place `images/` and `labels/` in `data/` as follows:
 ```
 MessyTable
 ├── models
