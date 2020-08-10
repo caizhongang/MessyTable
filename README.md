@@ -16,10 +16,9 @@ pip install scipy==1.2.0
 ```
 
 ### Dataset Preparation
-* Download MessyTable.zip (~22 GB) from [[Aliyun]]() (coming soon) or [[Google Drive]](https://drive.google.com/file/d/1i4mJz9xsDwhzWes7sVLXuhLKP9eNtbBG/view?usp=sharing)
-* Unzip MessyTable.zip, the unzipped folder includes `images/` and `labels/`
-* In the repository, make directory `data/`
-* Place `images/` and `labels/` in `data/` as follows:
+* Download MessyTable.zip (~22 GB) from [[Aliyun]](https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/MessyTable.zip) or [[Google Drive]](https://drive.google.com/file/d/1i4mJz9xsDwhzWes7sVLXuhLKP9eNtbBG/view?usp=sharing)
+* Unzip MessyTable.zip, check the unzipped folder includes `images/` and `labels/`
+* Rename the unzipped folder to `data/`, place `data/` in this repository as follows:
 ```
 MessyTable
 ├── models
