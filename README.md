@@ -59,3 +59,16 @@ python train.py --config_dir asnet
 ```
 python train.py --config_dir asnet_1gpu
 ```
+## Citation
+If you find this repo or dataset useful, please consider citing our paper
+```bibtex
+@inproceedings{
+    CaiZhang2020MessyTable,
+    title={MessyTable: Instance Association in Multiple Camera Views},
+    author={Zhongang Cai and Junzhe Zhang and Daxuan Ren and Cunjun Yu and Haiyu Zhao and Shuai Yi and Chai Kiat Yeo and Chen Change Loy},
+    booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+    month = {August},
+    year={2020}
+}
+```
+
