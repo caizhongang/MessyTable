@@ -14,6 +14,7 @@ pip install torch==1.1.0 torchvision==0.3.0
 pip install opencv-python==3.4.2.17
 pip install scipy==1.2.0
 ```
+Note Python 3.7 is needed to use the KMSolver module we provide in src/, which is a python wrapper of a C++ implementation.
 
 ### Dataset Preparation
 * Download MessyTable.zip (~22 GB) from [[Aliyun]](https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/MessyTable.zip) or [[Google Drive]](https://drive.google.com/file/d/1i4mJz9xsDwhzWes7sVLXuhLKP9eNtbBG/view?usp=sharing)
