@@ -126,33 +126,33 @@ class ASNet(nn.Module):
         self.config = config
         if config['features_net'] == 'FeaturesRes18':
             app = models.resnet18(pretrained=True)
-            app.load_state_dict(torch.load('resnet18.pth'))
+            # app.load_state_dict(torch.load('resnet18.pth'))
             self.app = nn.Sequential(*list(app.children())[:-2])
 
             sur = models.resnet18(pretrained=True)
-            sur.load_state_dict(torch.load('resnet18.pth'))
+            # sur.load_state_dict(torch.load('resnet18.pth'))
             self.sur = nn.Sequential(*list(sur.children())[:-2])
 
             self.dim = 512
         elif config['features_net'] == 'FeaturesRes50':
             print('model type is FeaturesRes50')
             app = models.resnet50(pretrained=True)
-            app.load_state_dict(torch.load('resnet50.pth'))
+            # app.load_state_dict(torch.load('resnet50.pth'))
             self.app = nn.Sequential(*list(app.children())[:-2])
 
             sur = models.resnet50(pretrained=True)
-            sur.load_state_dict(torch.load('resnet50.pth'))
+            # sur.load_state_dict(torch.load('resnet50.pth'))
             self.sur = nn.Sequential(*list(sur.children())[:-2])
 
             self.dim = 2048
         elif config['features_net'] == 'FeaturesRes101':
             print('model type is FeaturesRes101')
             app = models.resnet101(pretrained=True)
-            app.load_state_dict(torch.load('resnet101.pth'))
+            # app.load_state_dict(torch.load('resnet101.pth'))
             self.app = nn.Sequential(*list(app.children())[:-2])
 
             sur = models.resnet101(pretrained=True)
-            sur.load_state_dict(torch.load('resnet101.pth'))
+            # sur.load_state_dict(torch.load('resnet101.pth'))
             self.sur = nn.Sequential(*list(sur.children())[:-2])
 
             self.dim = 2048
