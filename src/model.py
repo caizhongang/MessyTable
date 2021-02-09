@@ -30,7 +30,7 @@ class FeaturesRes50(nn.Module):
 
     def __init__(self):
         super(FeaturesRes50, self).__init__()
-        resnet50 = models.resnet18(pretrained=True)
+        resnet50 = models.resnet50(pretrained=True)
         # resnet50.load_state_dict(torch.load('resnet50.pth'))
         modules = list(resnet50.children())[:-1]
         self.features = nn.Sequential(*modules)
