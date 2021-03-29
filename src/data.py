@@ -90,7 +90,7 @@ def prepare_training_samples(config):
                         n_crop_id_subcls.append((scene, main_cam, sec_cam, a_crop_id, sec_crop_id))
                     elif a_crop_id != sec_crop_id and a_crop_value['cls'] == sec_crop_value['cls']:
                         n_crop_id_cls.append((scene, main_cam, sec_cam, a_crop_id, sec_crop_id))
-                    else:
+                    elif a_crop_id != sec_crop_id:
                         n_crop_id_others.append((scene, main_cam, sec_cam, a_crop_id, sec_crop_id))
         if triplet_sampling_ratio == []:
             n_crop_id = n_crop_id_subcls + n_crop_id_cls + n_crop_id_others
