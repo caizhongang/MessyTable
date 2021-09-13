@@ -73,7 +73,7 @@ def prepare_training_samples(config):
 
     for i in range(batch_num):
         batch_image_pairs = image_pairs_list[
-                            i * image_pairs_per_batch:min((i + 1) * image_pairs_per_batch, len(image_pairs_list) - 1)]
+                            i * image_pairs_per_batch:min((i + 1) * image_pairs_per_batch, len(image_pairs_list))]
         n_crop_id_subcls = []
         n_crop_id_cls = []
         n_crop_id_others = []
