@@ -2,7 +2,7 @@
 
 [2025-12-30] We released [MessyTable-SI](https://huggingface.co/datasets/sensenova/MessyTable-SI), a question–answering dataset built on top of MessyTable. The original MessyTable dataset provides unique instance IDs for objects observed across multiple views of the same scene. MessyTable-SI repurposes these annotations into multiple-choice questions for training multimodal large language models. It is specifically designed to cultivate spatial intelligence (SI), with an emphasis on cross-view correspondence understanding. MessyTable-SI is used in the training of the [SenseNova-SI](https://github.com/OpenSenseNova/SenseNova-SI) model series.
 
-# **MessyTable: Instance Association in Multiple Camera Views (ECCV'22)**
+# **MessyTable: Instance Association in Multiple Camera Views (ECCV'20)**
 
 Useful Links:
 * Visit our [[Project Homepage]](https://caizhongang.github.io/projects/MessyTable/) for an overview of MessyTable dataset
